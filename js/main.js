@@ -3,6 +3,7 @@ var table = document.getElementById("board");
 var bokstaver = ["", "A","B","C","D"];
 var count = 0;
 var brett = new Array(10);
+var starcount = 0;
 
 //Opprett fasitbrettet
 skapBrett();
@@ -24,7 +25,7 @@ function skapBrett(){
 
     for(i = 0; i<10; i++){
 
-        brett[i][getRandomArbitrary(1,3)] = 3
+        brett[i][getRandomArbitrary(0,3)] = 3
     }     
 }
 
@@ -79,13 +80,15 @@ function scratch(id){
     var yint = parseInt(y);
     if(brett[y-1][x-1] === 3){
         document.getElementById(id).innerHTML = "*"
-        document.getElementById(id).classList.add("funnet")    
+        document.getElementById(id).classList.add("funnet")
+        starcount += 1;    
     }
 
     
     count += 1;
     document.getElementById(id).classList.add("skrapet");
     document.getElementById("score").innerHTML = "Score: " + count;
+    document.getElementById("starcount").innerHTML = "Stjerner: " + starcount + "/10";
     document.getElementById(id).disabled = true;
 }
 
