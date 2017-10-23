@@ -38,7 +38,7 @@ for (i = 0; i <= 10; i++){
         	var num2 = j;
         	iden = num1.toString() + num2.toString();
         	celle.id = iden;
-        	celle.setAttribute("onclick","scratch()");
+        	celle.setAttribute("onclick","scratch(this.id)");
 			celle.classList.add("ikkeskrapet");
         	cell.appendChild(celle);
 
@@ -46,6 +46,17 @@ for (i = 0; i <= 10; i++){
     }
 }
 
-function scratch(){
-	console.log(2)
+function scratch(id){
+    console.log(id)
+    document.getElementById(id).classList.remove("ikkeskrapet")
+    var x = id.substring(0,1);
+    var y = id.substring(1,2);
+    var xint = parseInt(x);
+    var yint = parseInt(y);
+    if(brett[x][y] === 3){
+        document.getElementById(id).innerHTML = "*"
+        document.getElementById(id).classList.add("funnet")    
+    }
+   
+    document.getElementById(id).classList.add("skrapet")
 }
