@@ -4,7 +4,7 @@ var bokstaver = ["", "A","B","C","D"];
 var brett = new Array(10);
 
 for (var i = 0; i < 10; i++) {
-  brett[i] = new Array(4);
+  brett[i] = new Array(3);
 }
 
 for (i = 0; i < 10; i++){
@@ -15,7 +15,7 @@ for (i = 0; i < 10; i++){
 
 for(i = 0; i<10; i++){
 
-    brett[i][getRandomArbitrary(0,3)] = 3
+    brett[i][getRandomArbitrary(1,3)] = 3
 }
 
 console.log(brett)
@@ -49,11 +49,18 @@ for (i = 0; i <= 10; i++){
 function scratch(id){
     console.log(id)
     document.getElementById(id).classList.remove("ikkeskrapet")
-    var x = id.substring(0,1);
-    var y = id.substring(1,2);
+    var y = "";
+    var x = "";
+    if(id.length != 2){
+        y = id.substring(0,2);
+        x = id.substring(2,3);
+    } else {
+        var y = id.substring(0,1);
+        var x = id.substring(1,2);
+    }
     var xint = parseInt(x);
     var yint = parseInt(y);
-    if(brett[x][y] === 3){
+    if(brett[y-1][x-1] === 3){
         document.getElementById(id).innerHTML = "*"
         document.getElementById(id).classList.add("funnet")    
     }
