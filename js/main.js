@@ -3,6 +3,8 @@ var bokstaver = ["", "A","B","C","D"];
 
 var brett = new Array(10);
 
+var count = 0;
+
 for (var i = 0; i < 10; i++) {
   brett[i] = new Array(3);
 }
@@ -71,4 +73,6 @@ function scratch(id){
     }
    
     document.getElementById(id).classList.add("skrapet")
+    count += 1;
+    document.getElementById("score").innerHTML = "Score: " + count;
 }
