@@ -2,17 +2,18 @@ var table = document.getElementById("board");
 var bokstaver = ["", "A","B","C","D"];
 
 var brett = new Array(10);
+
 for (var i = 0; i < 10; i++) {
   brett[i] = new Array(4);
 }
 
 for (i = 0; i < 10; i++){
     for(j = 0; j < 4; j++){
-        brett[i][j] = getRandomArbitrary(1,2);
+        brett[i][j] = 1;
     }
 }
 
-for(i = 0; i<9; i++){
+for(i = 0; i<10; i++){
 
     brett[i][getRandomArbitrary(0,3)] = 3
 }
@@ -32,7 +33,10 @@ for (i = 0; i <= 10; i++){
         else if(j===0){
         	cell.innerHTML = i;
         } else {
-        	cell.innerHTML = "yo";
+        	var celle = document.createElement("div");
+			celle.classList.add("ikkeskrapet");
+        	cell.appendChild(celle);
+
         }
     }
 }
