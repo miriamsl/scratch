@@ -33,10 +33,19 @@ for (i = 0; i <= 10; i++){
         else if(j===0){
         	cell.innerHTML = i;
         } else {
-        	var celle = document.createElement("div");
+        	var celle = document.createElement("button");
+        	var num1 = i;
+        	var num2 = j;
+        	iden = num1.toString() + num2.toString();
+        	celle.id = iden;
+        	celle.setAttribute("onclick","scratch()");
 			celle.classList.add("ikkeskrapet");
         	cell.appendChild(celle);
 
         }
     }
+}
+
+function scratch(){
+	console.log(2)
 }
