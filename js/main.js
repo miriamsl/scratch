@@ -75,4 +75,5 @@ function scratch(id){
     document.getElementById(id).classList.add("skrapet")
     count += 1;
     document.getElementById("score").innerHTML = "Score: " + count;
+    document.getElementById(id).disabled = true;
 }
