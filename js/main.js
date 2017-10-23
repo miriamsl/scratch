@@ -20,7 +20,6 @@ for(i = 0; i<10; i++){
     brett[i][getRandomArbitrary(1,3)] = 3
 }
 
-console.log(brett)
 function getRandomArbitrary(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min
 }
@@ -30,7 +29,11 @@ for (i = 0; i <= 10; i++){
     for(j = 0; j <= 4; j++){
         var cell = row.insertCell(j);
         if(i===0){
-        	cell.innerHTML = bokstaver[j];
+        	var celle = document.createElement("div");
+        	var tekst = document.createTextNode(bokstaver[j]);
+        	celle.classList.add("tekst");
+        	celle.appendChild(tekst);
+        	cell.appendChild(celle);
         }
         else if(j===0){
         	var celle = document.createElement("div");
@@ -54,7 +57,6 @@ for (i = 0; i <= 10; i++){
 }
 
 function scratch(id){
-    console.log(id)
     document.getElementById(id).classList.remove("ikkeskrapet")
     var y = "";
     var x = "";
