@@ -93,4 +93,6 @@ function getRandomArbitrary(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min
 }
 
-// Dette er en test
+function reload(){
+	window.location.reload(false);
+}
