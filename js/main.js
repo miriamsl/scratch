@@ -31,7 +31,12 @@ for (i = 0; i <= 10; i++){
         	cell.innerHTML = bokstaver[j];
         }
         else if(j===0){
-        	cell.innerHTML = i;
+        	var celle = document.createElement("div");
+        	var tekst = document.createTextNode(i + ".");
+        	celle.classList.add("tekst");
+        	celle.appendChild(tekst);
+        	cell.appendChild(celle);
+
         } else {
         	var celle = document.createElement("button");
         	var num1 = i;

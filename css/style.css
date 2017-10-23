@@ -2,16 +2,25 @@
 	width: 100%;
 	height: 30px;
 	background-color: grey;
+	border-radius: 5px;
 }
 
 .skrapet {
 	width: 100%;
 	height: 30px;
 	background-color: red;
+	border-radius: 5px;
 }
 
 .funnet {
 	width: 100%;
 	height: 30px;
 	background-color: white;
+	border-radius: 5px;
+}
+
+.tekst {
+	width: 100%;
+	height: 30px;
+	background-color: lightgray;
 }
